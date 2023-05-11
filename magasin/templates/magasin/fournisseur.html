@@ -1,0 +1,58 @@
+{% extends 'magasin/base.html' %}
+{% block content %} 
+<style>
+    /* Style du tableau */
+    table {
+         width: 100%;
+        border-collapse: collapse;
+            }
+
+    /* Style des cellules */
+    td {
+        padding: 8px;
+        text-align: left;
+         border-bottom: 1px solid #ddd;
+        }
+
+    /* Style de l'en-tête du tableau */
+        th {
+        padding: 8px;
+        text-align: left;
+        background-color: #f2f2f2;
+        border-bottom: 1px solid #ddd;
+            }
+
+    /* Style de la première ligne du tableau */
+        tr:first-child {
+        font-weight: bold;
+          background-color: #f9f9f9;
+            }
+
+    /* Style des liens dans les cellules */
+    a {
+        color: #0066cc;
+        text-decoration: none;
+        }
+
+    /* Style des liens au survol */
+    a:hover {
+        text-decoration: underline;
+        }
+
+</style>
+ <div class="col-md-12 text-center">
+ <h2>Listes Fournisseurs</h2>
+ </div> 
+
+ 
+ <table border="2">
+    {% for article in list %}
+    <tr>
+        <td>{{article.nom}} </td>
+        <td>{{article.adresse}} </td>
+        <td>{{article.email}} </td>
+        <td>{{article.telephone}} </td> 
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
